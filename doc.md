@@ -78,3 +78,99 @@ f_subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if 
 f_subscription_automatic:  "1" if true, else "0"
 ```
 
+<h2> Lotto regular </h2> <br>
+POST with params:
+
+```           
+f_game_type: "lotto",
+f_game_version: "lotto_regular",
+f_is_double: "1" if true, else "0",
+f_is_extra: "1" if true, else "0",
+
+f_games_count:  "1",  -- always "1"
+f_total_sum: "31.20",  -- total sum
+f_pay_method: "credit_card"/"balance"/"bit"/"applepay",
+f_is_subscription: "1" if user want to subscribe, else "0",
+f_subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+f_subscription_automatic:  "1" if true, else "0"
+
+IF NOT DOUBLE:
+
+nums_regular_line_1: "21;28;30;33;34;35;" - selected numbers in first string with separator ';' (from 01 to 37)
+nums_regular_line_2: "01;28;30;33;34;35;" - selected numbers in second string
+nums_regular_line_3: "01;28;30;33;34;35;" 
+nums_regular_line_4: "01;28;30;33;34;35;" 
+nums_regular_line_5: "01;28;30;33;34;35;"
+nums_regular_line_6: "01;28;30;33;34;35;"
+nums_regular_line_7: "01;28;30;33;34;35;"
+nums_regular_line_8: "01;28;30;33;34;35;"
+nums_regular_line_9: "01;28;30;33;34;35;"
+nums_regular_line_10: "01;28;30;33;34;35;"
+nums_regular_line_11: "01;28;30;33;34;35;"
+nums_regular_line_12: "01;28;30;33;34;35;"
+nums_regular_line_13: ""
+nums_regular_line_14: ""
+
+nums_regular_strong_1: "1" -- selected strong number in first line (1/2/3/4/5/6/7)
+nums_regular_strong_2: "3" -- selected strong number in second line (1/2/3/4/5/6/7)
+nums_regular_strong_3: ""
+nums_regular_strong_4: ""
+nums_regular_strong_5: ""
+nums_regular_strong_6: ""
+nums_regular_strong_7: ""
+nums_regular_strong_8: ""
+nums_regular_strong_9: ""
+nums_regular_strong_10: ""
+nums_regular_strong_11: ""
+nums_regular_strong_12: ""
+nums_regular_strong_13: ""
+nums_regular_strong_14: ""
+
+
+IF DOUBLE:
+
+nums_double_line_1: "02;28;30;33;34;35;" - selected numbers in first string with separator ';' (from 01 to 37)
+nums_double_line_2: ""
+nums_double_line_3: ""
+nums_double_line_4: ""
+nums_double_line_5: ""
+nums_double_line_6: ""
+nums_double_line_7: ""
+nums_double_line_8: ""
+nums_double_line_9: ""
+nums_double_line_10: ""
+
+nums_double_strong_1: "7" -- selected strong number in first line (1/2/3/4/5/6/7)
+nums_double_strong_2: "1"
+nums_double_strong_3: ""
+nums_double_strong_4: ""
+nums_double_strong_5: ""
+nums_double_strong_6: ""
+nums_double_strong_7: ""
+nums_double_strong_8: ""
+nums_double_strong_9: ""
+nums_double_strong_10: ""
+```
+
+<h2> Lotto systematic / strong </h2> <br>
+POST with params:
+
+```           
+f_game_type: "lotto",
+f_game_version: "lotto_systematic" / "lotto_strong",
+f_is_double: "1" if true, else "0",
+f_is_extra: "1" if true, else "0",
+
+f_games_count:  "1",  -- always "1"
+f_total_sum: "31.20",  -- total sum
+f_pay_method: "credit_card"/"balance"/"bit"/"applepay",
+f_is_subscription: "1" if user want to subscribe, else "0",
+f_subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+f_subscription_automatic:  "1" if true, else "0"
+
+f_form_type: "8", STR (8/5/9/10/11/12 - if systematic, 4/5/6/7 - if strong)
+f_nums_line: "01;03;07;09;12;18;21;22;27;33;" - selected numbers with separator ';' (from 01 to 37),
+f_nums_strong: "1;3;4;7;" selected strong numbers with separator ';'(1/2/3/4/5/6/7),
+
+```
+
