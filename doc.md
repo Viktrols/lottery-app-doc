@@ -174,3 +174,73 @@ f_nums_strong: "1;3;4;7;" selected strong numbers with separator ';'(1/2/3/4/5/6
 
 ```
 
+
+<h1>url: 'calc_game_lotto_sum/'</h1>
+
+<h2> 123 game</h2> <br>
+POST with params:
+
+```
+ticket_type:  "game123_regular",
+form_type: count of selected lines, STR, 1/2/3/4/5,
+price: selected price, STR, 1/2/3/5/10/25,
+
+is_subscription: "1" if user want to subscribe, else "0",
+subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+```
+
+<h2> 777 game</h2> <br>
+POST with params:
+
+```
+ticket_type: "game777_regular"/"game777_col8"/"game777_col9",
+form_type:  count of selected lines, STR, 1/2/3, -- always "1" if "game777_col8" or "game777_col9",
+
+is_subscription: "1" if user want to subscribe, else "0",
+subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+```
+
+<h2> Chance </h2> <br>
+POST with params:
+
+```
+ticket_type: 'chance_regular'/'chance_multi'/'chance_systematic',
+price: selected price, STR, 5/10/25/50/70/100/250,
+card_hearts: "A", selected card heart, STR, 7/8/9/10/J/Q/K/A if 'chance_regular'/'chance_multi' "78QA", selected cards heart in one string, STR, 7/8/9/T/J/Q/K/A, ('10' = 'T') if 'chance_systematic',
+card_spades: '' -- same as card_hearts,
+card_diamonds: '' -- same as card_hearts,
+card_clubs: '' -- same as card_hearts,
+
+is_subscription: "1" if user want to subscribe, else "0",
+subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+```
+
+<h2> Lotto regular </h2> <br>
+POST with params:
+
+```
+ticket_type: "lotto_regular",
+count_lines: '4', number of completely filled lines,
+is_double: "1" if true, else "0",
+is_extra: "1" if true, else "0",
+
+is_subscription: "1" if user want to subscribe, else "0",
+subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+```
+
+<h2> Lotto</h2> <br>
+POST with params:
+
+```
+ticket_type: "lotto_regular"/"lotto_systematic"/"lotto_strong"
+
+count_lines: '4', number of completely filled lines,  --- only if "lotto_regular"
+form_type: "8", STR (8/5/9/10/11/12 - if systematic, 4/5/6/7 - if strong)  --- only if "lotto_systematic"/"lotto_strong",
+
+is_double: "1" if true, else "0",
+is_extra: "1" if true, else "0",
+
+is_subscription: "1" if user want to subscribe, else "0",
+subscription_days: if subscription, count of days STR, 2/3/etc, "infinity" if each next game
+```
+
